@@ -1,6 +1,8 @@
-package com.bdpanajoto.algorithms.insertionsort;
+package com.bdpanajoto.algorithms.sorting.insertionsort;
 
 import java.util.Objects;
+
+import com.bdpanajoto.algorithms.sorting.SortingAlgorithm;
 
 /**
  * This is an implementation of Insertion Sort in Java. The basic algorithm
@@ -17,7 +19,7 @@ import java.util.Objects;
  * @author bdpanajoto
  *
  */
-public final class InsertionSort {
+public final class InsertionSort implements SortingAlgorithm {
 	/**
 	 * First try in implementing Insertion Sort.
 	 * 
@@ -25,7 +27,8 @@ public final class InsertionSort {
 	 *            sequence of unsorted integers.
 	 * @return the same array instance but sorted.
 	 */
-	public static final int[] sort(int[] array) {
+	@Override
+	public int[] sort(int[] array) {
 		Objects.requireNonNull(array);
 		for (int i = 1; i < array.length; i++) {
 			int j = i;

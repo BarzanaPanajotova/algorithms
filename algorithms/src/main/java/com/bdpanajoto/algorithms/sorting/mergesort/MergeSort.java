@@ -1,7 +1,9 @@
-package com.bdpanajoto.algorithms.mergesort;
+package com.bdpanajoto.algorithms.sorting.mergesort;
 
 import java.util.Arrays;
 import java.util.Objects;
+
+import com.bdpanajoto.algorithms.sorting.SortingAlgorithm;
 
 /**
  * This is an implementation of Merge Sort algorithm.
@@ -11,7 +13,7 @@ import java.util.Objects;
  * @author bdpanajoto
  *
  */
-public class MergeSort {
+public class MergeSort implements SortingAlgorithm {
 	/**
 	 * First try in implementing Merge Sort.
 	 * 
@@ -19,7 +21,8 @@ public class MergeSort {
 	 *            sequence of unsorted integers.
 	 * @return new instance of an array object.
 	 */
-	public static final int[] sort(int[] array) {
+	@Override
+	public int[] sort(int[] array) {
 		Objects.requireNonNull(array);
 
 		if (array.length == 1)
