@@ -18,16 +18,16 @@ public class BinarySearch implements SearchingAlgorithm {
 	}
 
 	private int find(int[] array, int value, int startIndex, int endIndex) {
+		if (endIndex < startIndex)
+			return -1;
 		int halfway = startIndex + Math.floorDiv(endIndex - startIndex, 2);
 
 		if (array[halfway] == value) {
 			return halfway;
 		} else if (array[halfway] > value) {
-			return find(array, value, startIndex, halfway);
-		} else if (array[halfway] < value) {
+			return find(array, value, startIndex, halfway - 1);
+		} else {
 			return find(array, value, halfway + 1, endIndex);
 		}
-
-		return -1;
 	}
 }

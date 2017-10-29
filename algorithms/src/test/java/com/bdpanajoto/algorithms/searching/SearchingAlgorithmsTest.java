@@ -35,6 +35,12 @@ public class SearchingAlgorithmsTest {
 	}
 	
 	@Test(dataProvider = "SearchingAlgorithmsForTest")
+	public void testSearchingMiss(SearchingAlgorithm searchingAlgorithm) {
+		int test = searchingAlgorithm.indexOf(SORTED_ARRAY.clone(), 5);
+		Assert.assertEquals(test, -1);
+	}
+	
+	@Test(dataProvider = "SearchingAlgorithmsForTest")
 	public void testSearchingOneElement(SearchingAlgorithm searchingAlgorithm) {
 		int test = searchingAlgorithm.indexOf(ONE_ELEMENT_ARRAY.clone(), 1);
 		Assert.assertEquals(test, 0);
