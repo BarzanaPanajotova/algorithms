@@ -5,6 +5,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.bdpanajoto.algorithms.sorting.insertionsort.InsertionSort;
+import com.bdpanajoto.algorithms.sorting.insertionsort.SecondAttemptAtInsertionSort;
 import com.bdpanajoto.algorithms.sorting.mergesort.MergeSort;
 
 public class SortingAlgorithmsTest {
@@ -31,7 +32,7 @@ public class SortingAlgorithmsTest {
 
 	@DataProvider(name = "SortingAlgorithmsForTest")
 	public static Object[][] getAllSortingAlgorithms() {
-		return new Object[][] { { new InsertionSort() }, { new MergeSort() } };
+		return new Object[][] { { new InsertionSort() }, { new MergeSort() }, { new SecondAttemptAtInsertionSort() } };
 	}
 
 	@Test(expectedExceptions = NullPointerException.class, dataProvider = "SortingAlgorithmsForTest")
@@ -41,20 +42,20 @@ public class SortingAlgorithmsTest {
 
 	@Test(dataProvider = "SortingAlgorithmsForTest")
 	public void testSortingEmpty(SortingAlgorithm sortingAlgorithm) {
-		int[] testArray = sortingAlgorithm.sort(EMPTY_ARRAY);
+		int[] testArray = sortingAlgorithm.sort(EMPTY_ARRAY.clone());
 		Assert.assertEquals(testArray, EMPTY_ARRAY);
 	}
 
 	@Test(dataProvider = "SortingAlgorithmsForTest")
 	public void testSortingOneElement(SortingAlgorithm sortingAlgorithm) {
-		int[] testArray = sortingAlgorithm.sort(ONE_ELEMENT_ARRAY);
+		int[] testArray = sortingAlgorithm.sort(ONE_ELEMENT_ARRAY.clone());
 		Assert.assertEquals(testArray, ONE_ELEMENT_ARRAY);
 	}
 
 	@Test(dataProvider = "SortingAlgorithmsForTest")
 	public void testSorting(SortingAlgorithm sortingAlgorithm) {
 		long startTime = System.nanoTime();
-		int[] testArray = sortingAlgorithm.sort(UNSORTED_ARRAY);
+		int[] testArray = sortingAlgorithm.sort(UNSORTED_ARRAY.clone());
 		Assert.assertEquals(testArray, SORTED_ARRAY);
 		long endTime = System.nanoTime();
 		System.out.println("testSorting:" + sortingAlgorithm.getClass().getName() + ":" + (endTime - startTime));
@@ -63,7 +64,7 @@ public class SortingAlgorithmsTest {
 	@Test(dataProvider = "SortingAlgorithmsForTest")
 	public void testSortingBestCase(SortingAlgorithm sortingAlgorithm) {
 		long startTime = System.nanoTime();
-		int[] testArray = sortingAlgorithm.sort(SORTED_ARRAY);
+		int[] testArray = sortingAlgorithm.sort(SORTED_ARRAY.clone());
 		Assert.assertEquals(testArray, SORTED_ARRAY);
 		long endTime = System.nanoTime();
 		System.out
@@ -73,7 +74,7 @@ public class SortingAlgorithmsTest {
 	@Test(dataProvider = "SortingAlgorithmsForTest")
 	public void testSortingWorstCase(SortingAlgorithm sortingAlgorithm) {
 		long startTime = System.nanoTime();
-		int[] testArray = sortingAlgorithm.sort(UNSORTED_ARRAY_WORST_CASE);
+		int[] testArray = sortingAlgorithm.sort(UNSORTED_ARRAY_WORST_CASE.clone());
 		Assert.assertEquals(testArray, SORTED_ARRAY);
 		long endTime = System.nanoTime();
 		System.out.println(
