@@ -56,8 +56,8 @@ public class SortingAlgorithmsTest {
 	public void testSorting(SortingAlgorithm sortingAlgorithm) {
 		long startTime = System.nanoTime();
 		int[] testArray = sortingAlgorithm.sort(UNSORTED_ARRAY.clone());
-		Assert.assertEquals(testArray, SORTED_ARRAY);
 		long endTime = System.nanoTime();
+		Assert.assertEquals(testArray, SORTED_ARRAY);
 		System.out.println("testSorting:" + sortingAlgorithm.getClass().getName() + ":" + (endTime - startTime));
 	}
 
@@ -65,8 +65,8 @@ public class SortingAlgorithmsTest {
 	public void testSortingBestCase(SortingAlgorithm sortingAlgorithm) {
 		long startTime = System.nanoTime();
 		int[] testArray = sortingAlgorithm.sort(SORTED_ARRAY.clone());
-		Assert.assertEquals(testArray, SORTED_ARRAY);
 		long endTime = System.nanoTime();
+		Assert.assertEquals(testArray, SORTED_ARRAY);
 		System.out
 				.println("testSortingBestCase:" + sortingAlgorithm.getClass().getName() + ":" + (endTime - startTime));
 	}
@@ -75,8 +75,8 @@ public class SortingAlgorithmsTest {
 	public void testSortingWorstCase(SortingAlgorithm sortingAlgorithm) {
 		long startTime = System.nanoTime();
 		int[] testArray = sortingAlgorithm.sort(UNSORTED_ARRAY_WORST_CASE.clone());
-		Assert.assertEquals(testArray, SORTED_ARRAY);
 		long endTime = System.nanoTime();
+		Assert.assertEquals(testArray, SORTED_ARRAY);
 		System.out.println(
 				"testSortingWorstCase: " + sortingAlgorithm.getClass().getName() + ":" + (endTime - startTime));
 	}
