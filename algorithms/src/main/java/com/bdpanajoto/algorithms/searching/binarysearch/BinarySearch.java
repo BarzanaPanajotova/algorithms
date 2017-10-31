@@ -4,11 +4,15 @@ import com.bdpanajoto.algorithms.searching.SearchingAlgorithm;
 
 /**
  * 
+ * Complexity O(logn).
+ * 
  * @author bdpanajoto
  *
  */
 public class BinarySearch implements SearchingAlgorithm {
-
+	/**
+	 * {@inheritDoc}
+	 */
 	public int indexOf(int[] array, int value) {
 		if (array.length == 0)
 			return -1;
