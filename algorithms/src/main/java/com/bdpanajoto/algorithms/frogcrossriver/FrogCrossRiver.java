@@ -62,7 +62,7 @@ public final class FrogCrossRiver {
 	 *            integer array, each element range [1..X]
 	 * @param N
 	 *            integer, range [1..100,000]
-	 * @return
+	 * @return The number of seconds needed to fill the path from 0 to X.
 	 */
 	int solution(int X, int A[], int N) {
 		int neededSteps = X;
