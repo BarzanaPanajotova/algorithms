@@ -33,7 +33,7 @@ package com.bdpanajoto.algorithms.frogjumps;
  * @author bpanajotova
  *
  */
-public class FrogJumps {
+public final class FrogJumps {
 
 	FrogJumps() {
 	}
