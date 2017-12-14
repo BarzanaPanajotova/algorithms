@@ -59,7 +59,7 @@ public final class FrogCrossRiver {
 	 * @param X
 	 *            integer, range [1..100,000]
 	 * @param A
-	 *            integer, range [1..X]
+	 *            integer array, each element range [1..X]
 	 * @param N
 	 *            integer, range [1..100,000]
 	 * @return
