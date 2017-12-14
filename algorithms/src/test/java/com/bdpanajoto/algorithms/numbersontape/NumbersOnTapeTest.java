@@ -20,7 +20,7 @@ public class NumbersOnTapeTest {
 	}
 
 	@Test(dataProvider = "TapesForTest")
-	public void testFibonacci(int[] tape, int result) {
+	public void testNumbersOnTape(int[] tape, int result) {
 		Assert.assertEquals(NumbersOnTape.getSmallestDiff(tape), result);
 	}
 }
