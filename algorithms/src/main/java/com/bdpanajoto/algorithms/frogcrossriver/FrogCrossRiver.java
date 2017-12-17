@@ -66,16 +66,16 @@ public final class FrogCrossRiver {
 	 */
 	int solution(int X, int A[], int N) {
 		int neededSteps = X;
-		int[] availableForStep = new int[X];
+		int[] availableForStep = new int[X + 1];
 
-		for (int i = 0; i < N; i++) {
+		for (int i = 0; i < A.length; i++) {
 
-			if (A[i] <= X && availableForStep[A[i] - 1] != -1) {
+			if (availableForStep[A[i]] != -1) {
 				neededSteps--;
-				availableForStep[A[i] - 1] = -1;
+				availableForStep[A[i]] = -1;
 			}
 
-			if (A[i] == X && neededSteps == 0) {
+			if (neededSteps == 0) {
 				return i;
 			}
 		}
